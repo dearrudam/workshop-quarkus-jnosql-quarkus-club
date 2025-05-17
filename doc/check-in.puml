@@ -1,0 +1,15 @@
+@startuml
+
+actor Concierge
+
+
+Concierge -> Webpage: make|update check-in given a room and its guests
+activate Webpage
+Webpage -> ReservationResources: PUT /hotels/
+activate ReservationResources
+Webpage <- ReservationResources: return the reservation if exists
+deactivate ReservationResources
+Concierge <- Webpage: return the reservation if exists
+deactivate Webpage
+
+@enduml

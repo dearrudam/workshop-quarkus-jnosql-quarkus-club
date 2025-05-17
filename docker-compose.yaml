@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  oracle-nosql:
+    image: ghcr.io/oracle/nosql:latest-ce
+    ports:
+      - "8090:8090"
+    environment:
+      - KV_PROXY_PORT=8090
+    volumes:
+      - nosql-data:/opt/oracle/nosql/data
+
+volumes:
+  nosql-data:

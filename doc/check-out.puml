@@ -1,0 +1,15 @@
+@startuml
+
+actor Concierge
+
+
+Concierge -> Webpage: make a check-out given a room number
+activate Webpage
+Webpage -> ReservationResources: PUT /hotels/{number}
+activate ReservationResources
+Webpage <- ReservationResources: success or error if reservation is not found
+deactivate ReservationResources
+Concierge <- Webpage: success or error if reservation is not found
+deactivate Webpage
+
+@enduml

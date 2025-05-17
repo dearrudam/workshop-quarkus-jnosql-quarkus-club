@@ -1,0 +1,15 @@
+@startuml
+
+actor Concierge
+
+
+Concierge -> Webpage: getting paginated rooms
+activate Webpage
+Webpage -> HotelResources: GET /hotels/?page=1&size=10
+activate HotelResources
+Webpage <- HotelResources: return a paginated list of rooms
+deactivate HotelResources
+Concierge <- Webpage: return a paginated list of rooms
+deactivate Webpage
+
+@enduml
