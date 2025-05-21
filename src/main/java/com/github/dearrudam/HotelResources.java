@@ -39,14 +39,11 @@ public class HotelResources {
 
     @Path("/{number}")
     @DELETE
-    public Response checkOut(@PathParam("number") String number) {
-        return hotel.findById(number)
-                .map( room -> {
-                        hotel.checkOut(room);
-                        return Response.accepted().build();
-                })
-                .orElseGet(Response.noContent()::build);
-
+    public void checkOut(@PathParam("number") String number) {
+        hotel.checkOut(
+                hotel.findById(number)
+                        .orElseThrow(()->new WebApplicationException(Response.Status.NOT_FOUND))
+        );
     }
 
 }
