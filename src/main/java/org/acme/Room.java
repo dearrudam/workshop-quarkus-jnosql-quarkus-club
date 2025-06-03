@@ -1,4 +1,4 @@
-package com.github.dearrudam;
+package org.acme;
 
 import jakarta.nosql.Column;
 import jakarta.nosql.Entity;
