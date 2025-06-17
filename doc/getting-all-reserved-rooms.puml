@@ -1,15 +1,15 @@
 @startuml
 
-actor Concierge
+actor Receptionist
 
 
-Concierge -> Webpage: getting paginated rooms
+Receptionist -> Webpage: Getting which rooms are currently reserved
 activate Webpage
 Webpage -> HotelResources: GET /hotels/?page=1&size=10
 activate HotelResources
-Webpage <- HotelResources: return a paginated list of rooms
+Webpage <- HotelResources: return a paginated list of reserved rooms
 deactivate HotelResources
-Concierge <- Webpage: return a paginated list of rooms
+Receptionist <- Webpage: return a paginated list of reserved rooms
 deactivate Webpage
 
 @enduml

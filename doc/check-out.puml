@@ -1,15 +1,15 @@
 @startuml
 
-actor Concierge
+actor Receptionist
 
 
-Concierge -> Webpage: make a check-out given a room number
+Receptionist -> Webpage: Cancel a reservation by checking guests out of a room
 activate Webpage
 Webpage -> ReservationResources: DELETE /hotels/{number}
 activate ReservationResources
 Webpage <- ReservationResources: success or error if reservation is not found
 deactivate ReservationResources
-Concierge <- Webpage: success or error if reservation is not found
+Receptionist <- Webpage: success or error if reservation is not found
 deactivate Webpage
 
 @enduml

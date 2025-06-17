@@ -30,19 +30,19 @@ public class HotelResource {
     }
 
     @GET
-    public List<Room> getCheckedInRooms(@QueryParam("page")
+    public List<Room> getReservedRooms(@QueryParam("page")
                                @DefaultValue("1")
                                int page,
                                @QueryParam("size")
                                @DefaultValue("10")
                                int size) {
 
-        return hotel.getCheckedInRooms(PageRequest.ofPage(page).size(size));
+        return hotel.getReservedRooms(PageRequest.ofPage(page).size(size));
     }
 
     @GET
     @Path("/by-guest-document/{document}")
-    public List<Room> getCheckedInRoomsByGuestDocument(
+    public List<Room> getReservedRoomsByGuestDocument(
             @PathParam("document")
             String document,
             @QueryParam("page")
@@ -50,6 +50,6 @@ public class HotelResource {
             int page,
             @QueryParam("size")
             @DefaultValue("10") int size) {
-        return hotel.getCheckedInRoomsByGuestDocument(document, PageRequest.ofPage(page).size(size));
+        return hotel.getReservedRoomsByGuestDocument(document, PageRequest.ofPage(page).size(size));
     }
 }

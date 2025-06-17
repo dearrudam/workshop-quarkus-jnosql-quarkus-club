@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+package "   Hotel   " as Hotel {
+    usecase "Getting which rooms are currently reserved" as UC1
+    usecase "Create a reservation by checking guests into a room" as UC2
+    usecase "Cancel a reservation by checking guests out of a room" as UC3
+}
+
+
+actor Receptionist as r
+
+r --> UC1
+r --> UC2
+r --> UC3
+
+@enduml

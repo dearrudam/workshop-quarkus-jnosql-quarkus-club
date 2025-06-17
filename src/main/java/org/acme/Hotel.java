@@ -65,7 +65,7 @@ public interface Hotel extends NoSQLRepository<Room, String> {
      */
     @Find
     @OrderBy("_id")
-    List<Room> getCheckedInRooms(PageRequest pageRequest);
+    List<Room> getReservedRooms(PageRequest pageRequest);
 
     /**
      * Retrieves a paginated list of rooms ordered by their number and sorted by the specified sort criteria.
@@ -75,5 +75,5 @@ public interface Hotel extends NoSQLRepository<Room, String> {
      * @return a list of rooms for the specified page, sorted according to the provided criteria
      */
     @Find
-    List<Room> getCheckedInRoomsByGuestDocument(@By("guest.document") String guestDocument, PageRequest pageRequest, Sort... sorts);
+    List<Room> getReservedRoomsByGuestDocument(@By("guest.document") String guestDocument, PageRequest pageRequest, Sort... sorts);
 }
