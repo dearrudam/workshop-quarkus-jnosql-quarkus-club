@@ -14,9 +14,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.22.2</quarkus.platform.version>
-        <surefire-plugin.version>3.5.2</surefire-plugin.version>
-        <jnosql.version>1.1.8</jnosql.version>
+        <quarkus.platform.version>3.28.5</quarkus.platform.version>
+        <surefire-plugin.version>3.5.4</surefire-plugin.version>
+        <jnosql.version>1.1.10</jnosql.version>
         <skipITs>true</skipITs>
     </properties>
 
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>io.quarkiverse.jnosql</groupId>
             <artifactId>quarkus-jnosql-mongodb</artifactId>
-            <version>3.4.6</version>
+            <version>3.4.10</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jnosql.metamodel</groupId>
